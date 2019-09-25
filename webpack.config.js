@@ -4,10 +4,17 @@ module.exports = {
     // 2
     module: {
         rules: [{
-            test: /\.(js|jxs)$/,
-            exclude: /node_modules/,
-            use: ['babel-loader']
-        }]
+                test: /\.(js|jxs)$/,
+                exclude: /node_modules/,
+                use: ['babel-loader']
+            },
+            {
+
+                test: /\.css$/i,
+                use: ['style-loader', 'css-loader'],
+            }
+
+        ]
     },
     resolve: {
         extensions: ['*', '.js', '.jxs']

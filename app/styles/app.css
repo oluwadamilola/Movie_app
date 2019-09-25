@@ -1,0 +1,5 @@
+.book {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    column-gap: auto 1rem;
+}
