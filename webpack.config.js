@@ -28,13 +28,13 @@ module.exports = {
         new CleanWebpackPlugin(),
         new HtmlWebpackPlugin({
             title: 'Production',
-            template: './clients/index.html'
+            template: './client/index.html'
         })
     ],
     output: {
 
         publicPath: '/',
-        path: path.resolve(__dirname, 'clients')
+        path: path.resolve(__dirname, 'client')
     },
 
 };

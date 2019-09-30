@@ -28,15 +28,15 @@ module.exports = {
         new CleanWebpackPlugin(),
         new HtmlWebpackPlugin({
             title: 'Hello Webpack bundled JavaScript Project',
-            template: './clients/index.html'
+            template: './client/index.html'
         })
     ],
     output: {
-        path: path.resolve(__dirname, '../', 'clients'),
+        path: path.resolve(__dirname, '../', 'client'),
         publicPath: '/',
         filename: 'bundle.js'
     },
     devServer: {
-        contentBase: './clients'
+        contentBase: './client'
     },
 };
