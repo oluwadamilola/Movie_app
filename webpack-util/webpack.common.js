@@ -5,13 +5,14 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 module.exports = {
     entry: {
-        app: './app/index.js'
+        app: './client/app/index.js',
+
     },
     module: {
         rules: [{
-                test: /\.(js|jxs)$/,
+                test: /\.(js)$/,
                 exclude: /node_modules/,
-                use: ['babel-loader']
+                use: ['babel-loader', 'eslint-loader']
             },
             {
 
@@ -22,17 +23,18 @@ module.exports = {
         ]
     },
     resolve: {
-        extensions: ['*', '.js', '.jxs']
+        extensions: ['*', '.js']
     },
+
     plugins: [
-        new CleanWebpackPlugin(),
         new HtmlWebpackPlugin({
-            title: 'Hello Webpack bundled JavaScript Project',
-            template: './client/index.html'
+            template: './client/index.html',
+            inject: 'body'
         })
     ],
+
     output: {
-        path: path.resolve(__dirname, '../', 'client'),
+        path: path.resolve(__dirname, './client/dist'),
         publicPath: '/',
         filename: 'bundle.js'
     },
