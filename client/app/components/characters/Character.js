@@ -1,9 +1,8 @@
-import React, { Component } from "react";
+import React from "react";
+import '../../styles/app.scss'
 
-import Characters from "./Characters";
 
-export default class Character extends Component {
-  render() {
+const Character =() => {
     const {
       id,
       city,
@@ -11,18 +10,18 @@ export default class Character extends Component {
       status,
       name,
       image
-    } = this.props.location.state;
-    // console.log(this.props.location);
+    } = this.location.state;
+
 
     return (
       <>
-        <p>This is a page for a single character</p>
-        <p>The selected character is {this.props.match.params.characterID}</p>
+      <div className="character-info">
         <img src={image} alt={city} />
         <h2>Name:{name}</h2>
         <p>States:{status}</p>
         <p>Species:{species}</p>
+        </div>
       </>
     );
   }
-}
+export default Character;

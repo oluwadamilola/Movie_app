@@ -1,45 +1,34 @@
-import React, { Component } from "react";
+import React, { useState, useEffect } from "react";
 import "../../styles/characters.scss";
-import { Router, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
+import axios from "axios";
 
 const API = "https://rickandmortyapi.com/api/character";
 
-class Characters extends Component {
-  state = {
-    results: []
-  };
+const Characters = () => {
+  const [data, setData] = useState({ results: [] });
 
-  componentDidMount() {
-    fetch(API)
-      .then(res => res.json())
-      .then(data => {
-        this.setState({ results: data.results });
-        // console.log(this.state.results);
-      })
-      .catch(console.error);
-  }
+  useEffect(() => {
+    const fetchData = async () => {
+      const result = await axios(API);
 
-  render() {
-    const characters = this.state.results.map(item => (
-      <React.Fragment key={item.id}>
-        <Link to={{
-          pathname: `/character/${item.id}`,
-          state: {
-            ...item
-          }
-        }}>
-          <img src={item.image} alt="" className="characters-img" />
-          <h2>Name: {item.name}</h2>
-        </Link>
-        {/* <div>
-      <h2>Name: {item.name}</h2>
-        <p>Status: {item.status}</p>
-      </div> */}
-      </React.Fragment>
-    ));
+      setData(result.data);
+    };
+    fetchData();
+  }, []);
 
-    return <div className="characters">{characters}</div>;
-  }
-}
+  return (
+    <>
+      {data.results.map(item => (
+        <div key={item.id} className="characterCard">
+          <Link to={{ pathname: `/character/${item.id}` }}>
+            <img src={item.image} alt="" className="characters-img" />
+          </Link>
 
+          <h1>{item.name}</h1>
+        </div>
+      ))}
+    </>
+  );
+};
 export default Characters;
