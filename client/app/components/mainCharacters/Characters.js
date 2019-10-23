@@ -1,36 +1,46 @@
 import React, { useState, useEffect } from "react";
 import "./characters.scss";
 import { Link } from "react-router-dom";
-import axios from "axios";
-import api from '../../api/ApiConfig'
-
- const API = "https://rickandmortyapi.com/api/character";
+import API from "../../api/ApiConfig";
 
 const Characters = () => {
-  const [data, setData] = useState({ results: [] });
+  const [data, setData] = useState([]);
 
   useEffect(() => {
-    const fetchData = async () => {
-      const result = await axios(API);
+    const controller = new AbortController();
+    const signal = controller.signal;
 
-      setData(result.data);
-    };
-    fetchData();
+    fetch(API, { signal })
+      .then(response => response.json())
+      .then(data => {
+        setData(data.results);
+      });
+
+    return () => controller.abort();
   }, []);
-
+  console.log(data)
   return (
     <>
-    <div className="characters">
-      {data.results.map(item => (
-        <div key={item.id} >
-          <Link to={{ pathname: `/character/${item.id}` }}>
-            <img src={item.image} alt=""  className="characters-img"/>
-          </Link>
-          <h3>{item.name}</h3>
+      <div className="characters">
+        {data.map(item => (
+          <div key={item.id}>
+            <Link
+              to={{
+                pathname: `/character/${item.id}`,
+                state: {
+                  ...item
+                }
+              }}
+            >
+              <img
+                src={item.image}
+                alt={item.name}
+                className="characters-img"
+              />
+            </Link>
+            <h3>{item.name}</h3>
           </div>
-         
-       
-      ))}
+        ))}
       </div>
     </>
   );
