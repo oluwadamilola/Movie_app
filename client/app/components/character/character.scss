@@ -2,11 +2,12 @@ body {
     margin: 0px;
 }
 
-.p {
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    font-family: 12px;
+li {
+    font-size: 20px;
+    list-style-type: none;
 }
 
 .character-info {
     text-align: justify;
+    padding: 3rem;
 }
