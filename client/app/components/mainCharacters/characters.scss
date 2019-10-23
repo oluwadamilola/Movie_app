@@ -11,24 +11,17 @@ body {
 @media screen and (min-width: 768px) {
     .characters {
         display: grid;
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(3, 2fr);
         grid-gap: 10px;
         padding: 2px;
         margin-left: 2px;
+        transition: all 0.3s linear;
     }
 }
 
-.characters:hover {
-    box-shadow: 2px 5px 10px rgba(0, 0, 0, 0.3)
-}
-
 .characters img {
-    width: 50%;
-    float: left;
+    width: 30%;
     margin-right: 3%;
     margin-bottom: 1.5em;
-}
-
-.character-info {
-    padding: 10px;
+    width: 85%;
 }

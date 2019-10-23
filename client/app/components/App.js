@@ -1,8 +1,8 @@
 import React from 'react';
-//import Book from './Book'
-import Characters from './characters/Characters'
-import Character from './characters/Character'
+import Characters from './mainCharacters/Characters'
+import Character from './character/Character'
 import '../styles/app.scss';
+import "@babel/polyfill";
 import {Route} from 'react-router-dom';
 
 const App = () => (
