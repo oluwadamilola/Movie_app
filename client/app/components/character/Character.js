@@ -1,5 +1,5 @@
 import React from "react";
-import "./characters.scss";
+import "./character.scss";
 
 function Character(props) {
     const {
@@ -17,15 +17,16 @@ function Character(props) {
     return (
       <>
        <div className="character-info">
-        <p>The selected character is {props.match.params.characterID}</p>
         <img src={image} alt={city} />
         <h2>Name: {name}</h2>
-        <p>States: {status}</p>
-        <p>Species: {species}</p>
-        <p>Gender: {gender}</p>
-        <p>Location: {location.name}</p>
-        <span>Location: {location.url}</span>
-        <p>Created: {created}</p>
+        <ul>
+        <li>Status: {status}</li>
+        <li>Species: {species}</li>
+        <li>Gender: {gender}</li>
+        <li>Location: {location.name}</li>
+        <li>Created: {created}</li>
+        <span>Location Url: {location.url}</span>
+        </ul>
         </div>
       </>
     );
