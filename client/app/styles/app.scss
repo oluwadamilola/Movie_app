@@ -1,7 +1,9 @@
-.booklist {
-    display: flex;
-    justify-items: center;
-    justify-content: space-evenly;
-    margin: auto;
-    padding: 1rem;
+$mainWhite: #fff;
+$mainBlue: rgb(43, 7, 73);
+$mainBlack: #000;
+body {
+    background: $mainWhite;
+    color: $mainBlack;
+    font-family: 'Open Sans Condensed', sans-serif;
+    padding: 2px;
 }
