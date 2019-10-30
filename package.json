@@ -40,6 +40,7 @@
         "eslint-config-prettier": "^6.4.0",
         "react": "^16.9.0",
         "react-dom": "^16.9.0",
+        "react-epic-spinners": "^0.4.1",
         "react-router-dom": "^5.1.2"
     }
 }
