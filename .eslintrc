@@ -1,8 +1,11 @@
 {
-    "parser": "babel-eslint",
-    "rules": {
-        "max-len": [1, 150, 2, {"ignoreComments": true}],
-        "extends": ["plugin:prettier/recommended"]
-    }
-  
+  "parser": "babel-eslint",
+  "rules": {
+      "max-len": [1, 150, 2, {"ignoreComments": true}],
+      "extends": ["plugin:prettier/recommended",
+        "prettier/react"
+
+      ]
   }
+
+}

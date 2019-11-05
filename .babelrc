@@ -1,16 +1,10 @@
 {
-    "presets": [
-      "@babel/preset-env",
-      "@babel/preset-react"
-    ],
-    "plugins": [
-      [
-        "@babel/plugin-proposal-class-properties"
-      ],
-      ["@babel/plugin-transform-regenerator", {
-        "asyncGenerators": true,
-        "generators": true,
-        "async": true
-      }]
+  "presets": [
+    "@babel/preset-env",
+    "@babel/preset-react"
+  ],
+  "plugins": [
+    "@babel/plugin-transform-arrow-functions",
+    "@babel/plugin-transform-runtime"
   ]
-  }
+}

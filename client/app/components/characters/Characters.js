@@ -2,40 +2,19 @@ import React, { useState, useEffect } from "react";
 import { AtomSpinner } from "react-epic-spinners";
 
 import "./characters.scss";
-import api from "../../api/api";
-import CardLinks from '../shared/CardLinks';
+import CardList from "../shared/CardList";
+import useApiData from "../../state/useApiData"
 
 const Characters = () => {
-  const [data, setData] = useState([]);
-  const [loading, setLoading] = useState(false);
-
-  useEffect(() => {
-    setLoading(true);
-
-    api
-      .get()
-      .then(response => {
-        setData(response.data.results);
-        setLoading(false);
-      })
-      .catch(console.error);
-  }, []);
-
-
-  if (loading) {
-    return (
-      <div className="data-loading">
-        <AtomSpinner color="blue" />;
-        <p>Loading</p>
-      </div>
-    );
-  }
+const {data,loading, error} = useApiData()
 
   return (
     <>
-      <div className="characters">
-        <CardLinks items={data} />
-      </div>
+    <div className="characters">
+
+            <CardList items={data} />
+          </div>
+
     </>
   );
 };

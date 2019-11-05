@@ -1,7 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-function CardLinks({ items }) {
+ const CardList = ({ items })=> {
+
     const links = items.map(item => (
         <div key={item.id}>
             <Link
@@ -22,4 +23,4 @@ function CardLinks({ items }) {
     return links;
 }
 
-export default CardLinks;
+export default CardList;
