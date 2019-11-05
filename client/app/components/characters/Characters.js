@@ -3,7 +3,7 @@ import { AtomSpinner } from "react-epic-spinners";
 
 import "./characters.scss";
 import CardList from "../shared/CardList";
-import useApiData from "../shared/useApiData"
+import useApiData from "../../state/useApiData"
 
 const Characters = () => {
 const {data,loading, error} = useApiData()
