@@ -11,7 +11,7 @@ const {data,loading, error} = useApiData()
   return (
     <>
     <div className="characters">
-    { loading && <p>loading...</p> }
+
             <CardList items={data} />
           </div>
 
