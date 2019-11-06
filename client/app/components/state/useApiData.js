@@ -4,22 +4,23 @@ import api from "../api/api";
 
 const useApiData = () => {
     const [data, setData] = useState([]);
-    const [loading, setLoading] = useState();
+    const [loading, setLoading] = useState(true);
     const [error, setError] = useState();
 
     useEffect(() => {
         const makeRequest = async() => {
-            setLoading(true);
+            setLoading(false);
             try {
                 const response = await api.get("/character");
                 setData(response.data.results);
             } catch (error) {
                 setError(error.message);
             }
-            setLoading(false);
+            setLoading(true);
         };
         makeRequest();
-    });
+    }, []);
+
     return {
         data,
         loading,
