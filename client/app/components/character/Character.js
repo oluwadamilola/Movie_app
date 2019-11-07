@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from 'prop-types';
 import "./character.scss";
 
- Character =(props)=> {
+ const Character =(props)=> {
   const {
     city,
     species,
