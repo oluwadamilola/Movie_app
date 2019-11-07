@@ -1,7 +1,8 @@
 import React from "react";
+import PropTypes from 'prop-types';
 import "./character.scss";
 
-function Character(props) {
+ const Character =(props)=> {
   const {
     city,
     species,
@@ -12,6 +13,14 @@ function Character(props) {
     location,
     created
   } = props.location.state;
+
+  Character.PropTypes={
+    name: PropTypes.string,
+    city: PropTypes.string,
+    location: PropTypes.string,
+    status: PropTypes.string,
+    
+  }
 
   return ( 
     <>
