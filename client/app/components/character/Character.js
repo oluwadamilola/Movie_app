@@ -14,14 +14,6 @@ import "./character.scss";
     created
   } = props.location.state;
 
-  Character.PropTypes={
-    name: PropTypes.string,
-    city: PropTypes.string,
-    location: PropTypes.string,
-    status: PropTypes.string,
-    
-  }
-
   return ( 
     <>
     <div className="character-info">
@@ -38,6 +30,16 @@ import "./character.scss";
     </div>
     </>
   );
+}
+Character.propTypes={
+  name: PropTypes.string,
+  city: PropTypes.string,
+  location: PropTypes.string,
+  status: PropTypes.string,
+  gender: PropTypes.string,
+  city: PropTypes.string,
+  created: PropTypes.string
+  
 }
 
 export default Character;
