@@ -1,18 +1,17 @@
 import React, { useState, useEffect } from "react";
-
-
 import "./characters.scss";
 import CardList from "../shared/CardList";
-import useApiData from "../../state/useApiData"
+import useApiData from "../../state/useApiData";
+import Search from "../shared/Search"
 
 const Characters = () => {
-const {data,loading, error} = useApiData()
+const {data,loading} = useApiData()
   return (
     <>
-
+   < Search />
+   {loading && <p>Loading...</p>}
     <div className="characters">
-    {loading && <p>Loading</p>}
-            <CardList items={data} />
+       <CardList items={data} />
           </div>
 
     </>

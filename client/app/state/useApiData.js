@@ -19,7 +19,9 @@ const useApiData = () => {
             setLoading(false);
         };
         makeRequest();
-    });
+
+
+    }, []);
     return {
         data,
         loading,
