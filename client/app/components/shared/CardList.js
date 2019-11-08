@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 const CardList = ({ items }) => {
 
-  const links = items.map(item => (
+  return  items.map(item => (
     <div key={item.id}>
       <Link
         to={{
@@ -20,7 +20,7 @@ const CardList = ({ items }) => {
     </div>
   ));
 
-  return links;
+ 
 }
 
 export default CardList;
