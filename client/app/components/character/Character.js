@@ -37,7 +37,6 @@ Character.propTypes={
   location: PropTypes.string,
   status: PropTypes.string,
   gender: PropTypes.string,
-  city: PropTypes.string,
   created: PropTypes.string
   
 }
