@@ -28,11 +28,11 @@ const Episode = () => {
   }, []);
 
   //console.log(episodes);
-  const indexOfLastEpisode = currentPage * episodesPerPage;
-  const indexOfFirstEpisode = indexOfLastEpisode - episodesPerPage;
+  const lastEpisode = currentPage * episodesPerPage;
+  const firstEpisode = lastEpisode - episodesPerPage;
   const currentEpisode = episodes.slice(
-    indexOfFirstEpisode,
-    indexOfLastEpisode
+    firstEpisode,
+    lastEpisode
   );
 
   const paginate = (pageNumbers) =>
