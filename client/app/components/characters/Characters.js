@@ -18,7 +18,7 @@ const Characters = () => {
     <>
       <Link to="/episodes">Episodes</Link>
       <Search onSearchSubmitted={onSearchChanged} />
-      {loading && <p>Loading...</p>}
+      {loading && <div className="loader"></div>}
       <div className="characters">
         <CardList items={data} />
       </div>
