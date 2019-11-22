@@ -1,11 +1,18 @@
 import React from "react";
+import PropTypes from 'prop-types';
 
 const EpisodesList = ({ items }) => {
+
+  const table = {
+    tableLayout: 'fixed',
+    width: '100%',
+    borderCollapse: 'collapse',
+    
+  }
   return (
-    <table>
+    <table style={table}>
       <thead>
         <tr>
-          <th>Id</th>
           <th>Name</th>
           <th>Air Date</th>
           <th>Created</th>
@@ -17,7 +24,6 @@ const EpisodesList = ({ items }) => {
         {  items.map( (item) => {
            return (
             <tr key={item.id}>
-            <td>{item.id}</td>
               <td>{ item.name }</td>
               <td>{item.air_date}</td>
               <td>{ item.created}</td>
@@ -30,5 +36,13 @@ const EpisodesList = ({ items }) => {
       </tbody>
     </table>
   );
+}
+
+EpisodesList.propTypes ={
+name: PropTypes.string,
+air_date: PropTypes.string,
+created: PropTypes.string,
+episode: PropTypes.string,
+url: PropTypes.string
 }
 export default EpisodesList;
