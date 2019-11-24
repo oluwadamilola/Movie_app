@@ -1,16 +1,12 @@
 import React from "react";
 import PropTypes from 'prop-types';
+import "./table.css"
 
 const EpisodesList = ({ items }) => {
 
-  const table = {
-    tableLayout: 'fixed',
-    width: '100%',
-    borderCollapse: 'collapse',
-    
-  }
+
   return (
-    <table style={table}>
+    <table className='episodeTable'>
       <thead>
         <tr>
           <th>Name</th>
@@ -18,6 +14,7 @@ const EpisodesList = ({ items }) => {
           <th>Created</th>
           <th>Episode</th>
           <th>Url</th>
+    
         </tr>
       </thead>
       <tbody>
@@ -29,6 +26,7 @@ const EpisodesList = ({ items }) => {
               <td>{ item.created}</td>
               <td>{ item.episode }</td>
               <td>{item.url}</td>
+             
               
             </tr>
           )

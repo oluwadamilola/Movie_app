@@ -27,7 +27,6 @@ const Episode = () => {
     fetchEpisodes();
   }, []);
 
-  //console.log(episodes);
   const lastEpisode = currentPage * episodesPerPage;
   const firstEpisode = lastEpisode - episodesPerPage;
   const currentEpisode = episodes.slice(
