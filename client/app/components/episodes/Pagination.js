@@ -1,5 +1,5 @@
 import React from "react";
-import "./pagination.css";
+import "./table.css";
 
 const Pagination = ({ episodesPerPage, total, paginate }) => {
   const pageNumbers = [];
