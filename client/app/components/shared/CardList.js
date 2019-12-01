@@ -10,7 +10,7 @@ const CardList = ({ items }) => {
     margin: " 20px",
     boxShadow: "0 5px 5px 5px #0003",
     overflow: "hidden",
-    marginRight:' margin-right: 3%'
+    marginRight: " margin-right: 3%"
   };
 
   const hstyle = {
