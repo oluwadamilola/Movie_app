@@ -5,6 +5,7 @@ import CardList from "../shared/CardList";
 import useApiData, { useSearchableAPI } from "../../state/useApiData";
 import Search from "../shared/Search";
 import styled from "styled-components";
+import Header from "../shared/Header"
 
 const Characters = () => {
   const [search, setSearch] = useState("");
@@ -16,7 +17,7 @@ const Characters = () => {
 
   return (
     <>
-      <Link to="/episodes">Episodes</Link>
+      <Header/>
       <Search onSearchSubmitted={onSearchChanged} />
       {loading && <div className="loader"></div>}
       <div className="characters">
