@@ -1,7 +1,5 @@
 import React from 'react';
 import { Link } from "react-router-dom";
-import { FaBluetooth, FaAlignRight } from 'react-icons/fa';
-
 
 function Header() {
 
