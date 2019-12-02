@@ -1,26 +1,38 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
- const CardList = ({ items })=> {
+const CardList = ({ items }) => {
+  const cardStyle = {
+    border: "1px solid #0003",
+    width: "fit-content",
+    marginBottom: "5px",
+    borderRadius: "4px",
+    margin: " 20px",
+    boxShadow: "0 5px 5px 5px #0003",
+    overflow: "hidden",
+    marginRight: " margin-right: 3%"
+  };
 
-    const links = items.map(item => (
-        <div key={item.id}>
-            <Link
-                to={{
-                    pathname: `/character/${item.id}`,
-                    state: {
-                        ...item
-                    }
-                }}
-            >
-                <img src={item.image} alt={item.name} className="characters-img" />
-            </Link>
+  const hstyle = {
+    margin: "5px"
+  };
 
-            <h3>{item.name}</h3>
-        </div>
-    ));
+  return items.map(item => (
+    <div style={cardStyle} key={item.id}>
+      <Link
+        to={{
+          pathname: `/character/${item.id}`,
+          state: {
+            ...item
+          }
+        }}
+      >
+        <img src={item.image} alt={item.name} className="characters-img" />
+      </Link>
 
-    return links;
-}
+      <h3 style={hstyle}>{item.name}</h3>
+    </div>
+  ));
+};
 
 export default CardList;
