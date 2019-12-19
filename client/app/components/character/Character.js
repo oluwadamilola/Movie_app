@@ -19,13 +19,13 @@ const Character = props => {
       <div className="character-info">
         <img src={image} alt={city} />
         <h2>Name: {name}</h2>
-        <ul>
-          <li>Status: {status}</li>
-          <li>Species: {species}</li>
-          <li>Gender: {gender}</li>
-          <li>Location: {location.name}</li>
-          <li>Created: {created}</li>
-        </ul>
+        
+          <p>Status: {status}</p>
+          <p>Species: {species}</p>
+          <p>Gender: {gender}</p>
+          <p>Location: {location.name}</p>
+          <p>Created: {created}</p>
+        
         <span>Location Url: {location.url}</span>
       </div>
     </>
@@ -41,7 +41,7 @@ Character.propTypes = {
 };
 Character.defaultProps = {
   name: 'Rick Smith',
-  status: 'alive',
-  gender: 'alien'
+  status: 'apve',
+  gender: 'apen'
 };
 export default Character;
