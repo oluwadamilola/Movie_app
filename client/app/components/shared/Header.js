@@ -1,30 +1,24 @@
 import React from 'react';
 import { Link } from "react-router-dom";
+import "../../styles/app.scss"
 
 function Header() {
-
-  const header = {
-    padding: "16px",
-    backgroundColor: "#20232a",
-    color: "#ffffff",
-    zIndex: "1",
-    width: "100%",
-    top: "0",
-    left: "0",
-
-  }
-  const linkStyle = {
-    textDecoration: "none",
-    color: "#61dafb",
-    fontSize: "24px",
-
-
-  }
   return (
-    <div style={header}>
-      <Link style={linkStyle} to="/episodes">Episodes</Link>
-    </div>
-  )
+    <>
+      <nav className="navbar">
+        <div className="nav-center">
+          <ul className=" nav-links">
+            <li>
+              <Link to="/">Home</Link>
+            </li>
+            <li>
+              <Link  to="/episodes">Episodes</Link>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </>
+  );
 }
 
 export default Header
