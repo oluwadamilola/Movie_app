@@ -17,7 +17,6 @@ const Characters = () => {
 
   return (
     <>
-      <Header/>
       <Search onSearchSubmitted={onSearchChanged} />
       {loading && <div className="loader"></div>}
       <div className="characters">
