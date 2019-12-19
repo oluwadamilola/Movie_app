@@ -18,7 +18,7 @@ const Characters = () => {
   return (
     <>
       <Search onSearchSubmitted={onSearchChanged} />
-      {loading && <div className="loader"></div>}
+      {loading && <h3>Loading...</h3>}
       <div className="characters">
         <CardList items={data} />
       </div>
