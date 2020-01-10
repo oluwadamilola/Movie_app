@@ -1,11 +1,9 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
 import "./characters.scss";
 import CardList from "../shared/CardList";
 import useApiData, { useSearchableAPI } from "../../state/useApiData";
 import Search from "../shared/Search";
-import styled from "styled-components";
-import Header from "../shared/Header"
+
 
 const Characters = () => {
   const [search, setSearch] = useState("");
