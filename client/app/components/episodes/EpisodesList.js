@@ -2,13 +2,21 @@ import React from "react";
 import PropTypes from "prop-types";
 import "./table.css";
 import usePagedEpisodes from "../state/usePagedEpisodes";
+import styled from "styled-components";
 
-
-function EpisodesList() {
+const EpisodesList = () => {
   const { episodes, previous, next } = usePagedEpisodes();
 
+  const StyledButton = styled.button`
+    background-color: rgb(147, 209, 245);
+    border: 1px solid rgb(147, 209, 245);
+    margin: 1px;
+    padding: 0.20em 0.25em;
+    color: white;
+    margin-left: 1rem;
+  `;
   return (
-    <>
+    <div>
       <table className="episodeTable">
         <thead>
           <tr>
@@ -34,11 +42,11 @@ function EpisodesList() {
           })}
         </tbody>
       </table>
-      <button onClick={previous}>Prev</button>
-      <button onClick={next}>Next</button>
-    </>
+      <StyledButton onClick={previous}>Prev</StyledButton>
+      <StyledButton onClick={next}>Next</StyledButton>
+    </div>
   );
-}
+};
 
 EpisodesList.propTypes = {
   name: PropTypes.string,

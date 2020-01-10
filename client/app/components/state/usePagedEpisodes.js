@@ -1,4 +1,4 @@
-import React, { useEffect, useCallback } from "react";
+import React, { useEffect, useCallback, useReducer } from "react";
 import api from "../../api/api";
 
 const initialState = {
@@ -83,8 +83,8 @@ function episodeReducer(state = initialState, action) {
   }
 }
 
-function usePagedEpisodes() {
-  const [state, dispatch] = React.useReducer(episodeReducer, initialState);
+const usePagedEpisodes = () => {
+  const [state, dispatch] = useReducer(episodeReducer, initialState);
   const { page } = state;
   useEffect(() => {
     const makeRequest = async () => {
@@ -130,5 +130,5 @@ function usePagedEpisodes() {
     error,
     episodes
   };
-}
+};
 export default usePagedEpisodes;
