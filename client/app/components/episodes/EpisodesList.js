@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import "./table.css";
+import "./table.scss";
 import usePagedEpisodes from "../../hooks/usePagedEpisodes";
 import { StyledButton} from '../../styles/style'
 

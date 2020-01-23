@@ -1,10 +1,11 @@
 import React from 'react';
 import { Link } from "react-router-dom";
-import "../../styles/app.scss"
+import styled from 'styled-components'
+import { Navstyled, Nav} from '../../styles/style'
 
 function Header() {
   return (
-    <>
+    <Navstyled>
       <nav className="navbar">
         <div className="nav-center">
           <ul className=" nav-links">
@@ -17,7 +18,7 @@ function Header() {
           </ul>
         </div>
       </nav>
-    </>
+    </Navstyled>
   );
 }
 
