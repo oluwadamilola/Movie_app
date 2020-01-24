@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./characters.scss";
 import CardList from "../shared/CardList";
-import useApiData, { useSearchableAPI } from "../../state/useApiData";
+import useSearchableAPI from "../../hooks/useSearchableAPI"
 import Search from "../shared/Search";
 
 

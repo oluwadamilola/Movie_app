@@ -4,7 +4,7 @@ import Character from "./character/Character";
 import Episode from "./episodes/Episode";
 import { Route } from "react-router-dom";
 import Header from "./shared/Header"
-import "../styles/app.scss";
+
 
 const App = () => (
   <>
