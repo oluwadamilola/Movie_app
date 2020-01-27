@@ -22,15 +22,11 @@ export const Navstyled = styled.div `
 .nav-center {
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    width: var(--smallWidth);
-    margin: 0 auto;
-    max-width: var(--fullWidth);
 }
 
 .nav-links {
     display: flex;
-    align-items: center;
+    align-items: left;
 }
 
 .nav-links a {
@@ -56,5 +52,50 @@ export const Nav = styled.nav `
     display: flex;
     align-items: center;
     border-bottom: 2px solid white;
-    box-shadow: #476a2e;
+    box-shadow: 2px 5px 10px rgba(0, 0, 0, 0.3)
+`
+export const ListItem = styled.li `
+font-size: 20px;
+    list-style-type: none
+`
+export const Table = styled.table `
+
+  width: 95%;
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  padding: 5rem;
+  margin: 2rem;
+
+.episodeTable th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: rgb(147, 209, 245);
+    color: white;
+}
+`;
+export const TableData = styled.td `
+  border: 1px solid #ddd;
+    padding: 8px;
+`
+export const Td = styled.td `
+border: 1px solid #ddd;
+    padding: 8px;
+`
+export const Tr = styled.tr `
+border: 1px solid #ddd;
+    padding: 12px;
+        
+`
+export const Th = styled.th `
+ padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: rgb(147, 209, 245);
+    color: white;
+    border: 1px solid #ddd;
+    padding: 8px
+`
+export const Buttoncontainer = styled.div `
+margin: 15px;
 `
