@@ -1,15 +1,10 @@
 import React from "react";
-import { useEffect, useState } from "react";
-import Axios from "axios";
+import { useState } from "react";
 import styled from "styled-components";
-import api from "../../api/api";
 import { FaSearch } from "react-icons/fa";
 
 const Search = props => {
   const [searchValue, setsearchValue] = useState("");
-  const [data, setData] = useState();
-  const [error, setError] = useState();
-
   const handleSearchChanges = event => {
     setsearchValue(event.target.value);
   };
@@ -25,28 +20,35 @@ const Search = props => {
     resetInput();
   };
 
-const searchInput ={
-  width: '50%',
-  padding:'15px'
-}
-const Button = {
-     padding: '15px',
-    backgroundColor: 'transparent'
-}
+  const SearchForm = {
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "right",
+    marginTop: "50px"
+  };
 
+  const searchInput = {
+    width: "50%",
+    padding: "15px"
+  };
+  const Button = styled.button`
+    padding: 15px;
+    background-color: transparent;
+  `;
   return (
     <div>
-      <form onSubmit={submitSearch} className="searchBox">
+      <form onSubmit={submitSearch} style={SearchForm}>
         <input
-        style={searchInput}
+          style={searchInput}
           className="searchInput"
           value={searchValue}
           onChange={handleSearchChanges}
           type="text"
         />
-        <button style={Button} type="submit" placeholder="search">
-        <FaSearch />
-        </button>
+
+        <Button type="submit" placeholder="search">
+          <FaSearch />
+        </Button>
       </form>
     </div>
   );
