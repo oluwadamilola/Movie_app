@@ -1,25 +1,24 @@
-import React from 'react';
+import React from "react";
 import { Link } from "react-router-dom";
-import styled from 'styled-components'
-import { Navstyled, Nav} from '../../styles/style'
+import { Navstyled, Nav, ListItem } from "../../styles/style";
 
 function Header() {
   return (
     <Navstyled>
-      <nav className="navbar">
-        <div className="nav-center">
+      <Nav className="navbar">
+        <div className="nav">
           <ul className=" nav-links">
-            <li>
+            <ListItem>
               <Link to="/">Home</Link>
-            </li>
-            <li>
-              <Link  to="/episodes">Episodes</Link>
-            </li>
+            </ListItem>
+            <ListItem>
+              <Link to="/episodes">Episodes</Link>
+            </ListItem>
           </ul>
         </div>
-      </nav>
+      </Nav>
     </Navstyled>
   );
 }
 
-export default Header
+export default Header;
