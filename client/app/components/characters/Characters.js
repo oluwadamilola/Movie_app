@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-
 import CardList from "../shared/CardList";
 import useSearchableAPI from "../../hooks/useSearchableAPI"
 import Search from "../shared/Search";
