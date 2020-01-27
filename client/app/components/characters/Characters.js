@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from "react";
-import "./characters.scss";
+
 import CardList from "../shared/CardList";
 import useSearchableAPI from "../../hooks/useSearchableAPI"
 import Search from "../shared/Search";
+import {Spinner, CharacterImage} from '../../styles/page'
 
 
 const Characters = () => {
@@ -16,10 +17,10 @@ const Characters = () => {
   return (
     <>
       <Search onSearchSubmitted={onSearchChanged} />
-      {loading && <h3>Loading...</h3>}
-      <div className="characters">
+      {loading && <Spinner>Loading...</Spinner>}
+      <CharacterImage>
         <CardList items={data} />
-      </div>
+      </CharacterImage>
     </>
   );
 };
