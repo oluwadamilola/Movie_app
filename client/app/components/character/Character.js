@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import "./character.scss";
+import { CharacterInfo} from '../../styles/page'
 
 const Character = props => {
   const {
@@ -16,10 +16,9 @@ const Character = props => {
 
   return (
     <>
-      <div className="character-info">
+      <CharacterInfo>
         <img src={image} alt={city} />
         <h2>Name: {name}</h2>
-        
           <p>Status: {status}</p>
           <p>Species: {species}</p>
           <p>Gender: {gender}</p>
@@ -27,7 +26,7 @@ const Character = props => {
           <p>Created: {created}</p>
         
         <span>Location Url: {location.url}</span>
-      </div>
+      </CharacterInfo>
     </>
   );
 };

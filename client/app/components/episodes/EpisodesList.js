@@ -1,8 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
-import "./table.scss";
 import usePagedEpisodes from "../../hooks/usePagedEpisodes";
-import { StyledButton} from '../../styles/style'
+import { StyledButton,Buttoncontainer,Table, Td, Tr, Th} from '../../styles/style'
 
 const EpisodesList = () => {
   const { episodes, previous, next } = usePagedEpisodes();
@@ -10,33 +9,35 @@ const EpisodesList = () => {
   
   return (
     <div>
-      <table className="episodeTable">
+      <Table className="episodeTable">
         <thead>
-          <tr>
-            <th>Name</th>
-            <th>Air Date</th>
-            <th>Created</th>
-            <th>Episode</th>
-            <th>Url</th>
-          </tr>
+          <Tr>
+            <Th>Name</Th>
+            <Th>Air Date</Th>
+            <Th>Created</Th>
+            <Th>Episode</Th>
+            <Th>Url</Th>
+          </Tr>
         </thead>
         <tbody>
           {episodes.map(item => {
             const { id, name, air_date, created, episode, url } = item;
             return (
               <tr key={id}>
-                <td>{name}</td>
-                <td>{air_date}</td>
-                <td>{created}</td>
-                <td>{episode}</td>
-                <td>{url}</td>
+                <Td>{name}</Td>
+                <Td>{air_date}</Td>
+                <Td>{created}</Td>
+                <Td>{episode}</Td>
+                <Td>{url}</Td>
               </tr>
             );
           })}
         </tbody>
-      </table>
+      </Table> 
+      <Buttoncontainer>
       <StyledButton onClick={previous}>Prev</StyledButton>
       <StyledButton onClick={next}>Next</StyledButton>
+      </Buttoncontainer>
     </div>
   );
 };
