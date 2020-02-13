@@ -36,7 +36,7 @@ const Search = props => {
     background-color: transparent;
   `;
   return (
-    <div>
+    <>
       <form onSubmit={submitSearch} style={SearchForm}>
         <input
           style={searchInput}
@@ -45,12 +45,11 @@ const Search = props => {
           onChange={handleSearchChanges}
           type="text"
         />
-
         <Button type="submit" placeholder="search">
           <FaSearch />
         </Button>
       </form>
-    </div>
+    </>
   );
 };
 
