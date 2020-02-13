@@ -1,18 +1,17 @@
 import React from "react";
-import Characters from "./characters/Characters";
-import Character from "./character/Character";
-import Episode from "./episodes/Episode";
 import { Route } from "react-router-dom";
-import Header from "./shared/Header"
+import Header from "./shared/Header";
+import routes from "../core/routing";
 
-
-const App = () => (
-  <>
-  <Header/>
-    <Route path="/" exact component={Characters} />
-    <Route path="/character/:characterID" exact component={Character} />
-    <Route path="/episodes" exact component={Episode} />
-  </>
-);
+const App = () => {
+  return (
+    <>
+      <Header />
+      {routes.map(({ path, component }, key) => {
+        return <Route path={path} exact component={component} key={key} />;
+      })}
+    </>
+  );
+};
 
 export default App;
