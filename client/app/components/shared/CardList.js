@@ -1,15 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import {CardStyle} from '../../styles/page'
+import { CardStyle } from "../../styles/page";
+
 
 const CardList = ({ items }) => {
-  
-  const hstyle = {
-    margin: "5px"
-  };
-
   return items.map(item => (
-    <CardStyle  key={item.id}>
+    <CardStyle key={item.id}>
       <Link
         to={{
           pathname: `/character/${item.id}`,
@@ -21,7 +17,7 @@ const CardList = ({ items }) => {
         <img src={item.image} alt={item.name} className="characters-img" />
       </Link>
 
-      <h3 style={hstyle}>{item.name}</h3>
+      <h3>{item.name}</h3>
     </CardStyle>
   ));
 };
