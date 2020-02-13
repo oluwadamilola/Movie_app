@@ -11,7 +11,7 @@ export const StyledButton = styled.button `
   `;
 
 
-export const Navstyled = styled.div `
+export const Navstyled = styled.nav `
 .navbar{
     height: 5rem;
     display: flex;
