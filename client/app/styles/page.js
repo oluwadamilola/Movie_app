@@ -36,14 +36,3 @@ export const CharacterImage = styled.div `
     justify-content: center;
   }
 `
-export const CardStyle = styled.div `
-    border: 1px solid #0003;
-    width: fit-content;
-    margin-bottom: 5px;
-    border-radius: 4px;
-    margin: 20px;
-    box-shadow: 0 5px 5px 5px #0003;
-    overflow: hidden;
-    margin-right: 3%
-  
-`
