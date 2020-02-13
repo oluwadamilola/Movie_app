@@ -24,7 +24,6 @@ const Character = props => {
           <p>Gender: {gender}</p>
           <p>Location: {location.name}</p>
           <p>Created: {created}</p>
-        
         <span>Location Url: {location.url}</span>
       </CharacterInfo>
     </>
@@ -39,8 +38,11 @@ Character.propTypes = {
   created: PropTypes.string
 };
 Character.defaultProps = {
-  name: 'Rick Smith',
-  status: 'apve',
+  location: 'Earth',
+  status: 'alive',
+  species: 'Human',
   gender: 'apen'
 };
 export default Character;
+
+
